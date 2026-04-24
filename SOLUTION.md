@@ -505,7 +505,9 @@ Deadline: 01/01/2027
 
 **Report format:** x CSV ☐ PNG ☐ PDF ☐ All
 
-Stakeholder Report: AWS_Cost_Optimization_Report_Eric_Borba.md
+**Stakeholder Report**: 
+
+![StakeHolder Report](AWS_Cost_Optimization_Report_Eric_Borba.md)
 
 **Report includes:**
 - [x] Executive summary
