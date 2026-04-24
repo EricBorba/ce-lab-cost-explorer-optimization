@@ -1,7 +1,7 @@
 # Lab Solution: AWS Cost Explorer and Cost Optimization
 
-**Student Name:** ___________________________  
-**Date:** ___________________________  
+**Student Name:** Eric Rodrigues Borba  
+**Date:** 24/04/2026  
 **Lab Completion Time:** ___________ minutes
 
 ---
@@ -11,9 +11,10 @@
 ### Screenshot 1: Cost Explorer Dashboard
 ![Cost Explorer](screenshots/01-cost-explorer-dashboard.png)
 
-**Date Cost Explorer enabled (if new):** ___________________________
+**Date Cost Explorer enabled (if new):** 
+22/04/2026
 
-**Account has usage history:** ☐ Yes ☐ No (If no, practiced with interface)
+**Account has usage history:** ☐ Yes x No (If no, practiced with interface)
 
 ---
 
@@ -24,16 +25,15 @@
 **Screenshot 2: 6-Month Trend**
 ![6-Month Trend](screenshots/02-6-month-trend.png)
 
-**Total spend (last 6 months):** $_______________
+**Total spend (last 6 months):** $3.125,67
 
-**Average monthly:** $_______________
+**Average monthly:** $520,945
 
-**Highest month:** _________________, $_______________
+**Highest month:** October, $ ~800 
 
 **Reason for highest month:**
 ```
-_____________________________________________________________
-_____________________________________________________________
+Service EC2 had high consumption and also resulted in higher taxes being paid.
 ```
 
 ---
@@ -45,10 +45,7 @@ _____________________________________________________________
 
 **Observations about daily patterns:**
 ```
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
+The figure shows daily granularity, but not service-specific granularity. However, a clear pattern can be observed, except for Friday, January 30th, where a peak in demand can be seen.
 ```
 
 ---
@@ -61,11 +58,11 @@ _____________________________________________________________
 ![Top Services](screenshots/04-top-services.png)
 
 **Top 5 Services:**
-1. ___________________________: $_______________
-2. ___________________________: $_______________
-3. ___________________________: $_______________
-4. ___________________________: $_______________
-5. ___________________________: $_______________
+1. Elastic Compute Cloud: $89,24
+2. Elastic Load Balancing: $39,58
+3. Virtual Private Cloud: $37,21
+4. Key Management Service: $8,38
+5. WAF: $8,00
 
 ---
 
@@ -74,39 +71,40 @@ _____________________________________________________________
 **Screenshot 5: EC2 Breakdown**
 ![EC2 Costs](screenshots/05-ec2-breakdown.png)
 
-**Most expensive instance type:** ___________________________
+**Most expensive instance type:** "No Instance Type" and the next one is "t3a.2xlarge"
 
-**Total EC2 cost (last month):** $_______________
-
-**Percentage of total bill:** ___________%
+**Total EC2 cost (last month):** $984,29
+"Not exactly last month. I am using the information that was possible to obtain from the picture that was provived to us."
+**Percentage of total bill:** 11,5%
 
 **Usage type breakdown:**
-- On-Demand: $_______________
-- Reserved Instances: $_______________
-- Spot Instances: $_______________
-- Data Transfer: $_______________
-
+- On-Demand: $820,00
+- Reserved Instances: $90,00
+- Spot Instances: $45,00
+- Data Transfer: $29,29
+"Many of the values ​​are fictitious because my CloudWatch dashboard is still empty (but enabled) and the images provided do not contain this information"
 ---
 
 ### S3 Cost Breakdown
 
 **Screenshot 6: S3 Breakdown**
-![S3 Costs](screenshots/06-s3-breakdown.png)
+![S3 Costs](screenshots/04-top-services.png)
 
-**Total S3 cost:** $_______________
+**Total S3 cost:** $4,62
 
-**Storage cost:** $_______________
+**Storage cost:** $3,70
 
-**Request cost:** $_______________
+**Request cost:** $0,72
 
-**Data transfer cost:** $_______________
+**Data transfer cost:** $0,00
 
 **Storage breakdown by class:**
-- Standard: $_______________
-- Intelligent-Tiering: $_______________
-- Glacier: $_______________
-- Other: $_______________
+- Standard: $3,00
+- Intelligent-Tiering: $0,5
+- Glacier: $0,15
+- Other: $0,05
 
+"Many of the values ​​are fictitious because my CloudWatch dashboard is still empty (but enabled) and the images provided do not contain this information."
 ---
 
 ## Part 4: Advanced Filtering
@@ -116,14 +114,14 @@ _____________________________________________________________
 **Screenshot 7: Regional Costs**
 ![Regional Breakdown](screenshots/07-regional-costs.png)
 
-**Most expensive region:** ___________________________
+**Most expensive region:** "No availability zone" and "eu-west-1b" is the next.
 
-**Cost:** $_______________
+**Cost:** $ "information not available in the provided picture"
 
 **Are you using resources in regions you don't need?**
 ```
-_____________________________________________________________
-_____________________________________________________________
+Yes — the chart shows active spend across at least 9 regions. If your workloads are primarily in one
+region, consolidating could significantly reduce costs.
 ```
 
 ---
@@ -133,11 +131,11 @@ _____________________________________________________________
 **Screenshot 8: Cost by Tag**
 ![Tagged Costs](screenshots/08-cost-by-tag.png)
 
-**Tags analyzed:** ☐ Environment ☐ Project ☐ Team ☐ None available yet
+**Tags analyzed:** ☐ Environment ☐ Project ☐ Team x None available yet
 
 **Cost breakdown by tag (if available):**
 - Tag key: ___________________________
-  - Value 1: _______________, $_______________
+  - Value 1: Name, $_______________
   - Value 2: _______________, $_______________
   - Value 3: _______________, $_______________
 
@@ -151,11 +149,11 @@ _____________________________________________________________
 ![Cost Allocation Tags](screenshots/09-activated-tags.png)
 
 **AWS-Generated tags activated:**
-- [ ] aws:createdBy
+- [x] aws:createdBy
 - [ ] aws:cloudformation:stack-name
 - [ ] Other: ___________________________
 
-**Activation date:** ___________________________
+**Activation date:** 24/04/2026
 
 ---
 
@@ -164,31 +162,28 @@ _____________________________________________________________
 **Screenshot 10: Tagged Resources**
 ![Tagged Resources](screenshots/10-tagged-resources.png)
 
-**Resources tagged:** _________
+**Resources tagged:** my-second-vm (EC2)
 
 **Tagging Plan:**
 
 **Tag 1:**
-- Key: ___________________________
-- Values: _______________, _______________, _______________
-- Purpose: _______________________________________________
+- Key: Project
+- Values: web-app, _______________, _______________
+- Purpose: Identifies which project or product the resource belongs to, allowing cost allocation per project in billing reports.
 
 **Tag 2:**
-- Key: ___________________________
-- Values: _______________, _______________, _______________
-- Purpose: _______________________________________________
+- Key: Team
+- Values: engineering, _______________, _______________
+- Purpose: Tracks which team owns and is responsible for the resource, enabling chargebacks or budgets per team.
 
 **Tag 3:**
-- Key: ___________________________
-- Values: _______________, _______________, _______________
-- Purpose: _______________________________________________
+- Key: Environment
+- Values: production, _______________, _______________
+- Purpose: Distinguishes resources by deployment stage so you can compare spending across development, testing, and production.
 
 **How will these tags help with cost management?**
 ```
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
+They allow you to filter and group costs in AWS Cost Explorer by project, team, or environment. By doing so, it makes easy to see exactly where money is being spent.
 ```
 
 ---
@@ -201,10 +196,10 @@ _____________________________________________________________
 ![Monthly Report](screenshots/11-monthly-report.png)
 
 **Report configuration:**
-- Date range: ___________________________
-- Granularity: ___________________________
-- Group by: ___________________________
-- Chart type: ___________________________
+- Date range: 3 months
+- Granularity: Monthly
+- Group by: Service
+- Chart type: Bar
 
 ---
 
@@ -218,6 +213,7 @@ _____________________________________________________________
 2. ___________________________: _______%
 3. ___________________________: _______%
 
+"I don't have any costs being shown yet, but the image shows how it's possible to select the top results using the filter. AWS apparently doesn't allow pie charts."
 ---
 
 ### Report 3: Daily Cost Monitor
@@ -227,7 +223,7 @@ _____________________________________________________________
 
 **How often will you review this report?**
 ```
-_____________________________________________________________
+1-2 times per week. Daily if cost-sensitive environments or high-risk sytems
 ```
 
 ---
@@ -239,13 +235,13 @@ _____________________________________________________________
 **Screenshot 14: Anomaly Detection Monitor**
 ![Anomaly Monitor](screenshots/14-anomaly-monitor.png)
 
-**Monitor name:** ___________________________
+**Monitor name:** All Services Cost Monitor 
 
-**Threshold:** $_______________
+**Threshold:** $10
 
-**SNS topic:** ___________________________
+**SNS topic:** cost-anomaly-alerts
 
-**Email confirmed:** ☐ Yes ☐ No
+**Email confirmed:** ☐ Yes x No
 
 ---
 
@@ -260,6 +256,8 @@ _____________________________________________________________
 - [ ] RDS
 - [ ] Other: ___________________________
 
+"Selecting specific services is not possible aymore in aws while creating monitors"
+
 ---
 
 ## Part 8: Optimization Opportunities
@@ -273,29 +271,32 @@ _____________________________________________________________
 
 **1. Recommendation:**
 ```
-_____________________________________________________________
+Stop or terminate somos-staging-one (i-0b4e2c22b552b6ca1)
+in eu-central-1b — t3.2xlarge with only 0.4% CPU utilization
 ```
-- Potential savings: $_______________/month
-- Effort to implement: ☐ Low ☐ Medium ☐ High
-- Will implement: ☐ Yes ☐ No ☐ Maybe
+- Potential savings: $276.48/month/month
+- Effort to implement: ☐ Low x Medium ☐ High
+- Will implement: ☐ Yes ☐ No x Maybe
 
 **2. Recommendation:**
 ```
-_____________________________________________________________
+Stop or terminate somos-staging-one (i-0f45dec2bd643cc0d)
+in eu-central-1a — t3.2xlarge with only 0.5% CPU utilization
 ```
-- Potential savings: $_______________/month
-- Effort to implement: ☐ Low ☐ Medium ☐ High
-- Will implement: ☐ Yes ☐ No ☐ Maybe
+- Potential savings: $276,48/month
+- Effort to implement: ☐ Low x Medium ☐ High
+- Will implement: ☐ Yes ☐ No x Maybe
 
 **3. Recommendation:**
 ```
-_____________________________________________________________
+Downsize or stop eks-node-medium-pro (i-0c22d02fe05dff2f0)
+in eu-central-1a — t3.medium with 2.5% CPU utilization
 ```
-- Potential savings: $_______________/month
-- Effort to implement: ☐ Low ☐ Medium ☐ High
-- Will implement: ☐ Yes ☐ No ☐ Maybe
+- Potential savings: $14,81/month
+- Effort to implement: x Low ☐ Medium ☐ High
+- Will implement: ☐ Yes ☐ No x Maybe
 
-**Total potential savings:** $_______________/month
+**Total potential savings:** $567,77/month
 
 ---
 
@@ -303,6 +304,8 @@ _____________________________________________________________
 
 **Screenshot 17: Idle Resources**
 ![Idle Resources](screenshots/17-idle-resources.png)
+
+![Idle Resources - Cloud Watch](screenshots/17-cloud-watch.png)
 
 **Idle resources identified:**
 
@@ -326,30 +329,30 @@ _____________________________________________________________
 
 **Total idle resource cost:** $_______________/month
 
+"Not enough information to calculate indle resource costs. However, the step by step instructions of the lab were performed as it is possible to see on the pictures above."
+
 ---
 
 ### Reserved Instance Analysis
 
-**Current On-Demand EC2 spend:** $_______________/month
+**Current On-Demand EC2 spend:** $0/month
 
 **Consistently running instances:**
-- Instance type: ___________________________
-- Quantity: _____
-- Hours/month: _____
+- Instance type: t3.micro
+- Quantity: 1
+- Hours/month: 16
 
-**Reserved Instance Pricing Comparison:**
+| Term                    | Upfront  | Monthly | Total Annual           | Savings |
+| ----------------------- | -------- | ------- | ---------------------- | ------- |
+| On-Demand               | $0       | **$60** | **$720**               | 0%      |
+| 1-Year, No Upfront      | $0       | **$40** | **$480**               | **33%** |
+| 1-Year, Partial Upfront | **$150** | **$25** | **$450 + $150 = $600** | **17%** |
+| 1-Year, All Upfront     | **$420** | $0      | **$420**               | **42%** |
 
-| Term | Upfront | Monthly | Total Annual | Savings |
-|------|---------|---------|--------------|---------|
-| On-Demand | $0 | $_______ | $_______ | 0% |
-| 1-Year, No Upfront | $0 | $_______ | $_______ | ___% |
-| 1-Year, Partial Upfront | $_______ | $_______ | $_______ | ___% |
-| 1-Year, All Upfront | $_______ | $0 | $_______ | ___% |
 
 **Recommendation:**
 ```
-_____________________________________________________________
-_____________________________________________________________
+I am not running the instance long enough to be billed meaningfully because it is fully covered by the AWS Free Tier. In this case, Reserved Instances are not financially beneficial right now.
 ```
 
 ---
@@ -358,16 +361,17 @@ _____________________________________________________________
 
 ### Current State Assessment
 
-**Monthly average spend:** $_______________
+**Monthly average spend:** $520.94
 
 **Top 3 cost drivers:**
-1. ___________________________
-2. ___________________________
-3. ___________________________
+1. Elastic Compute Cloud (EC2) — $89.24/month (~11.5% of bill)
+2. Elastic Load Balancing — $39.58/month
+3. Virtual Private Cloud (VPC) — $37.21/month
 
-**Cost trend:** ☐ Increasing ☐ Stable ☐ Decreasing
+**Cost trend:** x Increasing ☐ Stable ☐ Decreasing
 
-**If increasing, by how much?** __________% over last 3 months
+**If increasing, by how much?** ~15% over last 3 months
+(based on October peak of ~$800 vs average of $520.94)
 
 ---
 
@@ -377,29 +381,32 @@ _____________________________________________________________
 
 **1.**
 ```
-Action: ______________________________________________________
-Expected savings: $_______________/month
-Owner: ___________________________
-Deadline: ___________________________
+Action:  Stop or terminate somos-staging-one (i-0b4e2c22b552b6ca1)
+in eu-central-1b — t3.2xlarge, 0.4% CPU utilization
+Expected savings: $276.48/month
+Owner: DevOps / Eric Rodrigues Borba
+Deadline: 01/05/2026
 ```
 
 **2.**
 ```
-Action: ______________________________________________________
-Expected savings: $_______________/month
-Owner: ___________________________
-Deadline: ___________________________
+Action: Stop or terminate somos-staging-one (i-0f45dec2bd643cc0d)
+in eu-central-1a — t3.2xlarge, 0.5% CPU utilization
+Expected savings: $276.48/month
+Owner: DevOps / Eric Rodrigues Borba
+Deadline: 01/05/2026
 ```
 
 **3.**
 ```
-Action: ______________________________________________________
-Expected savings: $_______________/month
-Owner: ___________________________
-Deadline: ___________________________
+Action:Downsize or stop eks-node-medium-pro (i-0c22d02fe05dff2f0)
+in eu-central-1a — t3.medium, 2.5% CPU utilization
+Expected savings: $14.81/month
+Owner:  DevOps / Eric Rodrigues Borba
+Deadline: 01/05/2026
 ```
 
-**Quick wins total savings:** $_______________/month
+**Quick wins total savings:** $567.77/month
 
 ---
 
@@ -407,29 +414,36 @@ Deadline: ___________________________
 
 **1.**
 ```
-Action: ______________________________________________________
-Expected savings: $_______________/month
-Owner: ___________________________
-Deadline: ___________________________
+Action: Consolidate workloads into fewer regions — currently spread
+across 9+ regions/AZs. Migrate non-essential resources to
+primary region (eu-central-1) to reduce cross-region
+data transfer and VPC costs.
+Expected savings: $20.00/month
+Owner:  DevOps / Cloud Architecture Team
+Deadline: 30/06/2026
 ```
 
 **2.**
 ```
-Action: ______________________________________________________
-Expected savings: $_______________/month
-Owner: ___________________________
-Deadline: ___________________________
+Action: Configure S3 Intelligent-Tiering or Lifecycle Policies
+to automatically move infrequently accessed objects to
+cheaper storage classes (Glacier).
+Expected savings: $1.50/month
+Owner: DevOps / Eric Rodrigues Borba
+Deadline: 30/06/2026
 ```
 
 **3.**
 ```
-Action: ______________________________________________________
-Expected savings: $_______________/month
-Owner: ___________________________
-Deadline: ___________________________
+Action:  Complete cost allocation tagging across all resources
+(Project, Team, Environment tags). Activate tags in
+Cost Explorer to enable per-team/project billing visibility.
+Expected savings: $0/month direct, but enables future waste identification
+Owner: Eric Rodrigues Borba
+Deadline:15/05/2026
 ```
 
-**Short-term total savings:** $_______________/month
+**Short-term total savings:** $21.50/month
 
 ---
 
@@ -437,42 +451,48 @@ Deadline: ___________________________
 
 **1.**
 ```
-Action: ______________________________________________________
-Expected savings: $_______________/month
-Owner: ___________________________
-Deadline: ___________________________
+Action: Evaluate Reserved Instances or Savings Plans for
+consistently running EC2 instances. A 1-year All Upfront
+RI can save up to 42% vs On-Demand for stable workloads.
+Expected savings: $30.00/month
+Owner: Cloud Finance / DevOps Lead
+Deadline: 01/10/2026
 ```
 
 **2.**
 ```
-Action: ______________________________________________________
-Expected savings: $_______________/month
-Owner: ___________________________
-Deadline: ___________________________
+Action:  Implement Auto Scaling for EC2 workloads to automatically
+scale down during off-peak hours (nights/weekends),
+eliminating idle compute costs.
+Expected savings: $25.00/month
+Owner: DevOps / Engineering Team
+Deadline: 01/10/2026
 ```
 
 **3.**
 ```
-Action: ______________________________________________________
-Expected savings: $_______________/month
-Owner: ___________________________
-Deadline: ___________________________
+Action: Review and clean up Elastic Load Balancer usage —
+currently the 2nd highest cost driver at $39.58/month.
+Remove unused load balancers and consolidate where possible.
+Expected savings: $15.00/month
+Owner: DevOps / Eric Rodrigues Borba
+Deadline: 01/01/2027
 ```
 
-**Long-term total savings:** $_______________/month
+**Long-term total savings:** $70.00/month
 
 ---
 
 ### Savings Summary
 
-| Timeframe | Total Savings/Month | Annual Impact |
-|-----------|-------------------|---------------|
-| Quick Wins | $_______ | $_______ |
-| Short-term | $_______ | $_______ |
-| Long-term | $_______ | $_______ |
-| **TOTAL** | **$_______** | **$_______** |
+| Timeframe   | Total Savings/Month | Annual Impact  |
+|-------------|---------------------|----------------|
+| Quick Wins  | $567.77             | $6,813.24      |
+| Short-term  | $21.50              | $258.00        |
+| Long-term   | $70.00              | $840.00        |
+| **TOTAL**   | **$659.27**         | **$7,911.24**  |
 
-**Percentage reduction:** __________% of current spend
+**Percentage reduction:** 126% of current spend
 
 ---
 
@@ -483,14 +503,16 @@ Deadline: ___________________________
 **Screenshot 18: Exported Report**
 ![Exported Report](screenshots/18-exported-report.png)
 
-**Report format:** ☐ CSV ☐ PNG ☐ PDF ☐ All
+**Report format:** x CSV ☐ PNG ☐ PDF ☐ All
+
+Stakeholder Report: AWS_Cost_Optimization_Report_Eric_Borba.md
 
 **Report includes:**
-- [ ] Executive summary
-- [ ] Cost trend charts
-- [ ] Top cost drivers
-- [ ] Optimization recommendations
-- [ ] Action plan with ROI
+- [x] Executive summary
+- [x] Cost trend charts
+- [x] Top cost drivers
+- [x] Optimization recommendations
+- [x] Action plan with ROI
 
 ---
 
@@ -500,47 +522,38 @@ Deadline: ___________________________
 
 **Your answer:**
 ```
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
+I think checking it at least once or twice a week makes sense for most setups, but daily if you're running something critical or just made infrastructure changes.
+The whole point is catching surprises early before a small spike turns into a big bill.
 ```
 
 ### 2. Why are cost allocation tags important for enterprise AWS accounts?
 
 **Your answer:**
 ```
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
+Without tags, you just see a total bill with no idea which team, project or service is actually responsible for the cost. Tags let you slice that bill and say "this $800 spike came from the data pipeline team's resources in production" instead of guessing.
 ```
 
 ### 3. Describe the trade-offs between Reserved Instances and On-Demand.
 
 **Your answer:**
 ```
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
+On-Demand is flexible and you only pay for what you use, but that freedom comes at full price. Reserved Instances can save you up to 42% but you're committing upfront
+for 1 or 3 years, so if your needs change or you shut down that instance, you've already paid and there's no refund.
 ```
 
 ### 4. What is the value of Cost Anomaly Detection?
 
 **Your answer:**
 ```
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
+It monitors your spending automatically and sends you an alert the moment something looks off, like a service suddenly costing 3x more than usual. Without it you'd only
+notice the damage at the end of the month when the bill arrives and it's already too late.
 ```
 
 ### 5. How would you present cost optimization findings to non-technical stakeholders?
 
 **Your answer:**
 ```
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
+I would skip the instance names and region codes and just say something like "we found that 60% of our compute spend was sitting idle, and by turning off two unused servers we can save $567 a month without any impact on performance or users."
 ```
 
 ---
@@ -551,13 +564,13 @@ _____________________________________________________________
 
 | Skill | Before Lab | After Lab | Growth |
 |-------|-----------|-----------|--------|
-| Using Cost Explorer | ___/5 | ___/5 | +___ |
-| Analyzing cost trends | ___/5 | ___/5 | +___ |
-| Cost allocation tags | ___/5 | ___/5 | +___ |
-| Identifying optimizations | ___/5 | ___/5 | +___ |
-| Reserved Instance planning | ___/5 | ___/5 | +___ |
-| Cost reporting | ___/5 | ___/5 | +___ |
-| Anomaly detection | ___/5 | ___/5 | +___ |
+| Using Cost Explorer | 1/5 | 3/5 | +___ |
+| Analyzing cost trends | 1/5 | 4/5 | +___ |
+| Cost allocation tags | 1/5 | 3/5 | +___ |
+| Identifying optimizations | 1/5 | 3/5 | +___ |
+| Reserved Instance planning | 1/5 | 4/5 | +___ |
+| Cost reporting | 1/5 | 4/5 | +___ |
+| Anomaly detection | 1/5 | 3/5 | +___ |
 
 ---
 
